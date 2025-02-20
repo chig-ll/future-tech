@@ -1,0 +1,49 @@
+@use '../helpers' as *;
+
+.header {
+	&__promo {
+		padding-block: rem(20);
+		text-align: center;
+		border-bottom: var(--border);
+	}
+	
+	&__body {
+		padding-block: rem(24);
+		background-color: var(--dark-black-10);
+		
+		&-inner {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			column-gap: rem(10);
+		}
+	}
+	
+	&__overlay {
+		@include mobile-above {
+			display: contents;
+		}
+	}
+	
+	&__menu {
+		&-list {
+			display: flex;
+			align-items: center;
+			column-gap: rem(16);
+		}
+		
+		&-link {
+			padding: rem(14) rem(24);
+			color: var(--color-gray);
+			
+			&.is-active {
+				color: var(--color-white);
+				background-color: var(--color-black-accent);
+				border-radius: var(--border-radius-medium);
+				border: 1px solid var(--dark-black-20);
+				font-weight: 500;
+				pointer-events: none;
+			}
+		}
+	}
+}
