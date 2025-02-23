@@ -1,7 +1,7 @@
 @use 'helpers' as *;
 
 body {
-	@include fluid-text(18, 14);
+	font-size: 1rem;
 	
 	font-family: var(--font-family-base);
 	letter-spacing: -0.03em;

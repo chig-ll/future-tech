@@ -2,9 +2,14 @@
 
 .header {
 	&__promo {
+		font-size: rem(18);
 		padding-block: rem(20);
 		text-align: center;
 		border-bottom: var(--border);
+		
+		@include mobile {
+			padding-block: rem(14);
+		}
 	}
 	
 	&__body {
@@ -17,11 +22,23 @@
 			align-items: center;
 			column-gap: rem(10);
 		}
+		
+		@include mobile {
+			padding-block: rem(20);
+		}
 	}
 	
 	&__overlay {
 		@include mobile-above {
 			display: contents;
+		}
+		
+		@include mobile {
+			&:not(.is-active) {
+				@include hide;
+				
+				translate: 100%;
+			}
 		}
 	}
 	
@@ -30,11 +47,20 @@
 			display: flex;
 			align-items: center;
 			column-gap: rem(16);
+			
+			@include tablet {
+				column-gap: rem(6);
+			}
 		}
 		
 		&-link {
+			font-size: rem(18);
 			padding: rem(14) rem(24);
 			color: var(--color-gray);
+			
+			@include laptop {
+				padding: rem(10) rem(18);
+			}
 			
 			&.is-active {
 				color: var(--color-white);
